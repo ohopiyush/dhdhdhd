@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TECHNOVA 2026 · Electronics Club, MITS Gwalior</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=JetBrains+Mono&display=swap">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script></head><body>
+<canvas id="bg"></canvas>
+<header class="nav"><a class="brand" href="#top"><img src="assets/logo.png" alt="" onerror="this.remove()">TECHNOVA<span>26</span></a>
+<button id="menu" aria-label="Menu">MENU</button>
+<nav id="links"><a href="#events">Events</a><a href="#register">Register</a><a href="#my">My registration</a><a href="#schedule">Schedule</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav></header>
+<main>
+<section id="top" class="hero"><p class="mono">ELECTRONICS CLUB · MITS GWALIOR</p><h1>TECHNOVA<br>2026</h1>
+<p class="tag">Four events. One board. Power it on.</p>
+<p class="mono">20 DEC 2026 · MITS Gwalior campus, four venues</p><div id="count" class="mono"></div><a class="btn" href="#register">Register</a></section>
+<section id="events" class="rv"><h2>Events</h2><div id="grid" class="grid"></div></section>
+<section id="register" class="rv panel"><h2>Register</h2>
+<form id="form" novalidate>
+<label>Full name<input name="name" data-v="req" autocomplete="name"><small></small></label>
+<label>College email<input name="email" data-v="email" placeholder="26xx@mitsgwl.ac.in"><small></small></label>
+<label>Enrollment number<input name="enrollment" data-v="enr" placeholder="BTEL26O1083"><small></small></label>
+<label>Mobile number<input name="phone" data-v="phone" inputmode="numeric" maxlength="10"><small></small></label>
+<label>Department<select name="department" data-v="req"><option value="">Select</option><option>Electronics</option><option>Computer Science</option><option>Information Technology</option><option>Mechanical</option><option>Civil</option><option>Electrical</option><option>Other</option></select><small></small></label>
+<label>Year<select name="year" data-v="req"><option value="">Select</option><option>1</option><option>2</option><option>3</option><option>4</option></select><small></small></label>
+<label>Event<select name="event" id="evsel"></select></label>
+<label>Participation<select name="type" id="type"><option value="individual">Individual</option><option value="team">Team</option></select></label>
+<div id="team" hidden><label>Team name<input name="team_name" data-v="req"><small></small></label>
+<label>Team size (including you)<select name="team_size" id="tsize"><option>2</option><option>3</option><option>4</option></select></label><div id="members"></div></div>
+<p id="closed" class="err" hidden>Registration closed for this event.</p>
+<button class="btn" id="submit">Submit registration</button><p id="msg" class="err"></p></form>
+<div id="ticket" class="ticket" hidden></div></section>
+<section id="my" class="rv panel"><h2>My registration</h2>
+<form id="lookup"><input id="q" placeholder="Email or TN26-0001" required><button class="btn">Look up</button></form><div id="lres"></div></section>
+<section id="schedule" class="rv"><h2>Schedule · 20 Dec 2026</h2><ol id="tl" class="tl"></ol></section>
+<section id="faq" class="rv panel"><h2>FAQ</h2><div id="faqs"></div></section>
+<section id="contact" class="rv panel"><h2>Contact</h2><p><a href="tel:+916260875232" class="mono">+91 6260875232</a></p><p><a href="mailto:26el1pi83@mitsgwl.ac.in" class="mono">26el1pi83@mitsgwl.ac.in</a></p></section>
+<section id="organiser" class="panel" hidden><h2>Organiser</h2>
+<form id="login"><input name="u" placeholder="Username" required autocomplete="off"><input name="pw" type="password" placeholder="Password" required><button class="btn">Log in</button><p id="lerr" class="err"></p></form>
+<div id="dash" hidden><div class="bar2"><input id="osearch" placeholder="Search"><select id="ofilter"></select><button class="btn" id="csv">Export CSV</button><button class="btn ghost" id="logout">Log out</button></div>
+<p id="ocount" class="mono"></p><div class="scroll"><table><thead><tr><th>ID</th><th>Name</th><th>Enrollment</th><th>Email</th><th>Phone</th><th>Event</th><th>Type</th><th>Team</th><th>Time</th></tr></thead><tbody id="tb"></tbody></table></div></div></section>
+</main>
+<footer><span class="mono">© TECHNOVA 2026 · Electronics Club</span> <a href="#organiser" id="olink" class="mono">Organiser</a></footer>
+<script src="script.js"></script><script type="module" src="scene.js"></script></body></html>
